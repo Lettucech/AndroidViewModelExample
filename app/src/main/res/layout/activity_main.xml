@@ -15,17 +15,19 @@
         android:text="Simple Demo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:textAllCaps="false"
         android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"/>
 
     <Button
-        android:id="@+id/btn_fragmentSyncDemo"
+        android:id="@+id/btn_syncSelectorDemo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fragment Sync Demo"
+        android:text="Sync Selector Demo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="4dp"
+        android:textAllCaps="false"
         app:layout_constraintTop_toTopOf="@+id/guideline"/>
 
     <androidx.constraintlayout.widget.Guideline

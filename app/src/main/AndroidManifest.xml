@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.github.brianbridge.androidviewmodelexample.activity.SimpleDemoActivity"/>
+        <activity android:name=".activity.SyncSelectorActivity"/>
     </application>
 
 </manifest>

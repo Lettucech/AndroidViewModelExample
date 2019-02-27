@@ -10,7 +10,6 @@ import kotlinx.coroutines.*
  * Created by Brian Ho on 22/2/2019.
  */
 class UserViewModel : ViewModel() {
-    private val TAG: String = UserViewModel::class.java.simpleName
     var loadDelay = 5000L
 
     private val users: MutableLiveData<List<User>> by lazy {
