@@ -1,10 +1,10 @@
 package com.github.brianbridge.androidviewmodelexample.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Switch
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -26,10 +26,10 @@ class SyncSelectorFragment : Fragment() {
             ViewModelProviders.of(this).get(SelectorViewModel::class.java)
         } ?: throw Exception("Invalid Activity")
 
-        selectorViewMode.status.observe(this, Observer {
-            switch1?.isChecked = it.get(1)
-            switch2?.isChecked = it.get(2)
-            switch3?.isChecked = it.get(3)
+        selectorViewMode.state.observe(this, Observer {
+            switch1?.also { s -> updateSelectorState(s, it.get(1)) }
+            switch2?.also { s -> updateSelectorState(s, it.get(2)) }
+            switch3?.also { s -> updateSelectorState(s, it.get(3)) }
         })
     }
 
@@ -47,6 +47,12 @@ class SyncSelectorFragment : Fragment() {
         }
         switch3.setOnCheckedChangeListener { compoundButton, b ->
             selectorViewMode.setStatus(3, b)
+        }
+    }
+
+    private fun updateSelectorState(switch: Switch, state: Boolean) {
+        if (switch.isChecked != state) {
+            switch.isChecked = state
         }
     }
 }

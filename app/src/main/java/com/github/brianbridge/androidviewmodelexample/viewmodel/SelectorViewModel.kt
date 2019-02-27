@@ -9,12 +9,12 @@ import androidx.lifecycle.ViewModel
  * Created by Brian Ho on 27/2/2019.
  */
 class SelectorViewModel : ViewModel() {
-    val status: MutableLiveData<SparseBooleanArray> by lazy {
+    val state: MutableLiveData<SparseBooleanArray> by lazy {
         MutableLiveData<SparseBooleanArray>()
     }
 
     fun setStatus(index: Int, checked: Boolean) {
-        status.value = status.value?.also {
+        state.value = state.value?.also {
             it[index] = checked
         } ?: SparseBooleanArray().also { it[index] = checked }
     }
